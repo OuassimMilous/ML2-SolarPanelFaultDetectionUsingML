@@ -1,0 +1,36 @@
+Testing with dataset: data.csv
+Testing Logistic Regression...
+Logistic Regression Accuracy: 99.41%
+Logistic Regression Precision: 90.91%
+Logistic Regression Recall: 90.91%
+Logistic Regression F1-Score: 90.91%
+Logistic Regression Best Parameters: {'C': 10, 'class_weight': None, 'penalty': 'l1', 'solver': 'saga'}
+
+Testing SVM...
+SVM Accuracy: 99.12%
+SVM Precision: 78.57%
+SVM Recall: 100.00%
+SVM F1-Score: 88.00%
+SVM Best Parameters: {'C': 0.01, 'class_weight': 'balanced', 'degree': 2, 'gamma': 'scale', 'kernel': 'linear'}
+
+Testing KNN...
+KNN Accuracy: 98.83%
+KNN Precision: 88.89%
+KNN Recall: 72.73%
+KNN F1-Score: 80.00%
+KNN Best Parameters: {'algorithm': 'auto', 'leaf_size': 20, 'n_neighbors': 5, 'weights': 'uniform'}
+
+Testing Random Forest...
+Random Forest Accuracy: 99.12%
+Random Forest Precision: 83.33%
+Random Forest Recall: 90.91%
+Random Forest F1-Score: 86.96%
+Random Forest Best Parameters: {'max_depth': 10, 'min_samples_split': 2, 'n_estimators': 50}
+
+Testing Gradient Boosting...
+Gradient Boosting Accuracy: 99.41%
+Gradient Boosting Precision: 100.00%
+Gradient Boosting Recall: 81.82%
+Gradient Boosting F1-Score: 90.00%
+Gradient Boosting Best Parameters: {'learning_rate': 0.1, 'loss': 'exponential', 'max_depth': 5, 'min_samples_split': 5, 'n_estimators': 50}
+
