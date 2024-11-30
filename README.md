@@ -137,4 +137,4 @@ Upon testing, the model yielded the following average performance metrics:
 
 ---
 
-This project was made by Ouassim Milous as part of the **Learning for Robotics II** course by professor Luca Oneto at the University of Genoa.
+This project was made by Ouassim Milous as part of the **Machine Learning for Robotics II** course by professor Luca Oneto at the University of Genoa.
