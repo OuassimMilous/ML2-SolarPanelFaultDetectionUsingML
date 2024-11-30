@@ -23,7 +23,7 @@ with open(results_json_path, 'w') as f:
 
 # Function to load and preprocess the dataset
 def load_and_preprocess_data(files):
-    # Load and concatenate both datasets
+    # Load and concatenate datasets into one DataFrame
     dfs = [pd.read_csv(file) for file in files]
     df = pd.concat(dfs, ignore_index=True)
     
@@ -37,7 +37,7 @@ def load_and_preprocess_data(files):
     # Handle categorical 'faulty' column (convert 'No'/'Yes' to 0/1)
     df['faulty'] = df['faulty'].map({'No': 0, 'Yes': 1})
     
-    # Define features and target
+    # Define features and target variable
     X = df.drop(columns=['annotation_file', 'panel_index', 'faulty'])  # Features (exclude irrelevant columns)
     y = df['faulty']  # Target column
     
@@ -56,7 +56,7 @@ models = [
     ('Gradient Boosting', Models.gradient_boosting),
 ]
 
-# Initialize results and best parameter counts dictionary to track parameter values
+# Initialize dictionary to track parameter counts for each model
 best_param_counts = {
     'Logistic Regression': {'C': {}, 'class_weight': {}, 'penalty': {}, 'solver': {}},
     'SVM': {'C': {}, 'class_weight': {}, 'degree': {}, 'gamma': {}, 'kernel': {}},

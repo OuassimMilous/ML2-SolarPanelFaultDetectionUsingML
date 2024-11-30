@@ -36,8 +36,8 @@ def logistic_regression(X_train, X_test, y_train, y_test):
     # Define the parameter grid for logistic regression
     param_grid = {
         'C': [10],  # Regularization strength (inverse of penalty)
-        'solver': ['liblinear'],  # Optimization algorithms
-        'class_weight': [None],  # Handle class imbalance
+        'solver': ['liblinear'],  # Optimization algorithm used for fitting the model
+        'class_weight': [None],  # Handling class imbalance by adjusting class weights
         'penalty': ['l1'],  # Regularization type (L1, L2, or ElasticNet)
     }
 
@@ -48,10 +48,10 @@ def logistic_regression(X_train, X_test, y_train, y_test):
 def knn(X_train, X_test, y_train, y_test):
     # Define the parameter grid for KNN
     param_grid = {
-        'n_neighbors': [3],  # Number of neighbors to use
-        'weights': ['uniform'],  # Weight function for predictions
-        'algorithm': ['auto'],  # Nearest neighbor search algorithm
-        'leaf_size': [20],  # Leaf size for tree-based algorithms
+        'n_neighbors': [3],  # Number of neighbors to use for making predictions
+        'weights': ['uniform'],  # Weight function used in prediction
+        'algorithm': ['auto'],  # Algorithm used for finding nearest neighbors
+        'leaf_size': [20],  # Size of leaf nodes for tree-based algorithms
     }
     
     model = KNeighborsClassifier()  # Create a KNN classifier model
@@ -61,21 +61,21 @@ def knn(X_train, X_test, y_train, y_test):
 def gradient_boosting(X_train, X_test, y_train, y_test):
     # Define the parameter grid for Gradient Boosting
     param_grid = {
-        'n_estimators': [50],  # Number of boosting stages
-        'learning_rate': [0.1],  # Step size
+        'n_estimators': [50],  # Number of boosting stages (trees)
+        'learning_rate': [0.1],  # Step size for each boosting stage
         'max_depth': [5],  # Maximum depth of individual trees
         'min_samples_split': [2],  # Minimum samples required to split a node
-        'loss': ['exponential'],  # Loss function for optimization
+        'loss': ['exponential'],  # Loss function for boosting optimization
     }
 
-    model = GradientBoostingClassifier()  # Create a Gradient Boosting model
+    model = GradientBoostingClassifier()  # Create a Gradient Boosting classifier model
     return evaluate_model(model, param_grid, X_train, X_test, y_train, y_test)
 
 # Random Forest Model with Grid Search for Hyperparameter Tuning
 def random_forest(X_train, X_test, y_train, y_test):
     # Define the parameter grid for Random Forest
     param_grid = {
-        'n_estimators': [200],  # Number of trees in the forest
+        'n_estimators': [200],  # Number of trees in the random forest
         'max_depth': [None],  # Maximum depth of trees
         'min_samples_split': [2],  # Minimum samples required to split a node
     }
@@ -87,12 +87,12 @@ def random_forest(X_train, X_test, y_train, y_test):
 def svm(X_train, X_test, y_train, y_test):
     # Define the parameter grid for SVM
     param_grid = {
-        'C': [0.01],  # Regularization parameter
-        'kernel': ['linear'],  # Kernel types
+        'C': [0.01],  # Regularization parameter for SVM
+        'kernel': ['linear'],  # Kernel type for the SVM (linear, RBF, etc.)
         'gamma': ['scale'],  # Kernel coefficient for non-linear kernels
-        'class_weight': ["balanced"],  # Handle class imbalance
-        'degree': [2],  # Degree for polynomial kernel
+        'class_weight': ["balanced"],  # Handle class imbalance by balancing weights
+        'degree': [2],  # Degree of polynomial kernel (only relevant for 'poly' kernel)
     }
 
-    model = SVC()  # Create an SVM model
+    model = SVC()  # Create an SVM classifier model
     return evaluate_model(model, param_grid, X_train, X_test, y_train, y_test)
