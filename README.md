@@ -135,6 +135,5 @@ Upon testing, the model yielded the following average performance metrics:
 - Infrared thermal imaging for fault detection in solar panels dataset by [Technodivesh](https://github.com/technodivesh/imagesearch/tree/master/images)
 
 
----
-
+-------
 This project was made by Ouassim Milous as part of the **Machine Learning for Robotics II** course by professor Luca Oneto at the University of Genoa.
